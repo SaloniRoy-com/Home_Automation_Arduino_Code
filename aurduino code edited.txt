@@ -1,0 +1,35 @@
+#define Wi_Fi 2
+#define LED_bulb 3
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(Wi_Fi, OUTPUT);
+  pinMode(LED bulb, OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if(Serial.available() == 1)
+  {
+    String val = Serial.readString();
+    Serial.println(val);
+    if(val == "Wi-Fi on")
+    {
+      digitalWrite(Wi_Fi, HIGH);
+    }
+    if(val == "Wi-Fi off")
+    {
+      digitalWrite(Wi_Fi, LOW);
+    }
+    if(val == "LED bulb on")
+    {
+      digitalWrite(LED_bulb, HIGH);
+    }
+    if(val == "LED bulb off")
+    {
+      digitalWrite(LED_bulb, LOW);
+    }
+    
+  }
+}
